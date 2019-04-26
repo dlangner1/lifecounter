@@ -9,44 +9,54 @@
     tools:context=".MainActivity">
 
     <edu.us.ischool.dlangner.lifecounter.PlayerCompoundControl
+        android:id="@+id/first_player"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
     />
 
     <edu.us.ischool.dlangner.lifecounter.PlayerCompoundControl
+        android:id="@+id/second_player"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
     />
 
     <edu.us.ischool.dlangner.lifecounter.PlayerCompoundControl
+        android:id="@+id/third_player"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
     />
 
     <edu.us.ischool.dlangner.lifecounter.PlayerCompoundControl
+        android:id="@+id/fourth_player"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
     />
 
-    <TextView
-        android:id="@+id/loser_text_view"
-        android:text="Player X is the loses!"
-        android:textSize="12pt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="174dp"
-        android:layout_marginRight="174dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteY="173dp"
-        tools:layout_editor_absoluteX="178dp"
-    />
+    <android.support.constraint.ConstraintLayout android:layout_width="match_parent"
+                                                 android:layout_height="wrap_content">
+        <TextView
+                android:id="@+id/loser_text_view"
+                android:text=""
+                android:visibility="invisible"
+                android:textSize="12pt"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+        />
+    </android.support.constraint.ConstraintLayout>
+
+
 </LinearLayout>

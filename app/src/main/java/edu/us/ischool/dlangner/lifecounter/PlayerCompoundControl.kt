@@ -10,6 +10,8 @@ import android.widget.TextView
 
 class PlayerCompoundControl: ConstraintLayout {
 
+    lateinit var delegate: MainActivity
+
     lateinit var playerNameLabel: TextView
     lateinit var scoreLabel: TextView
     lateinit var minusFiveButton: Button
@@ -49,6 +51,7 @@ class PlayerCompoundControl: ConstraintLayout {
                 } else {
                     scoreLabel.text = (currScore - 5).toString()
                 }
+                checkForPlayerLoss()
             }
         }
 
@@ -57,6 +60,7 @@ class PlayerCompoundControl: ConstraintLayout {
             val currScore = Integer.parseInt(scoreLabel.text.toString())
             if (currScore > 0) {
                 scoreLabel.text = (currScore - 1).toString()
+                checkForPlayerLoss()
             }
         }
 
@@ -70,6 +74,12 @@ class PlayerCompoundControl: ConstraintLayout {
         plusFiveButton.setOnClickListener {
             val newScore = (Integer.parseInt(scoreLabel.text.toString()) + 5).toString()
             scoreLabel.text = newScore
+        }
+    }
+
+    private fun checkForPlayerLoss() {
+        if (Integer.parseInt(scoreLabel.text.toString())<= 0) {
+            delegate.setLoserStatus(playerNameLabel.text.toString())
         }
     }
 }
